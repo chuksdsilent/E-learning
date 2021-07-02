@@ -1,0 +1,50 @@
+.sign-up-form h2 {
+    /* background: rgb(245, 157, 50) !important; */
+    font-size: 28px;
+    padding-top: 20px;
+}
+
+.container.sign-up-form {
+    padding-top: 4rem !important;
+}
+
+.card {
+    padding: 0px;
+    border-radius: 0px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.46);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.46);
+}
+
+.sign-up-form form {
+    margin: 20px 30px;
+
+}
+
+.sign-up-form {
+
+    display: flex;
+    justify-content: center;
+}
+
+
+#sign-up-form.card {
+    min-width: 600px;
+}
+
+#sign-up-form.signup {
+    min-width: 800px;
+}
+
+@media screen and (max-width: 700px) {
+
+    #sign-up-form.card {
+        min-width: 100%;
+    }
+
+
+    #sign-up-form.signup {
+        min-width: 100%;
+    }
+}

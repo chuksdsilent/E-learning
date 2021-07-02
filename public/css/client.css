@@ -1,0 +1,486 @@
+.index {
+    background-image: url('../images/mybanner.png');
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 580px;
+    margin: 0 auto;
+}
+
+.no-magin {
+    margin: 0px;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.contact-us {
+    background-image: url("../images/contac.png");
+    background-repeat: no-repeat;
+}
+
+.about-image {
+    background-image: url("../images/about.png");
+    background-repeat: no-repeat;
+
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+footer {
+    padding-bottom: 20px;
+}
+
+footer a {
+    display: block;
+}
+
+.copyright {
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 20px 0px;
+}
+
+footer h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.unlock-your-potential {
+    margin-top: 10rem;
+    background: rgba(245, 157, 50, .3) !important;
+}
+
+.unlock-your-potential img {
+    position: relative;
+    top: -8rem;
+}
+
+.unlock-your-potential h2 {
+    font-size: 100px;
+    position: relative;
+    bottom: 0px;
+    color: white;
+}
+
+h2.comfort {
+    font-size: 60px;
+    margin: 100px 0px;
+}
+
+.nav-wrapper {
+    background: rgb(245, 157, 50) !important;
+}
+
+.row,
+.col-md-6,
+.col-md-5,
+.col-md-7 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.acadazone,
+.acadazone h2 {
+    color: #000;
+    font-size: 20px;
+}
+
+select {
+    padding-top: 2px !important;
+}
+
+.fadeInDown,
+.fadeInUp {
+    animation-duration: 5s;
+}
+
+#login-form {
+    display: block;
+}
+
+.login-wrapper .login-text {
+    color: white;
+    padding-top: 100px;
+}
+
+.login-wrapper .login-text h1,
+.login-wrapper .login-text h2,
+.login-wrapper .login-text a {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.login-wrapper .login-text a {
+    color: black;
+    padding: 4px 40px;
+
+}
+
+.login-wrapper .login-text h1,
+.login-wrapper .login-text h2 {
+    font-size: 2.3rem;
+}
+
+.login-wrapper .login-text a {
+    min-width: 150px;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+.login .container {
+    min-width: 300px;
+}
+
+.login-wrapper .col-md-6 {
+    min-height: 70vh;
+}
+
+.login-form,
+.sign-up-form {
+    border: 1px solid #dddddd;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background: white;
+}
+
+
+footer a {
+    color: white;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+footer .col-md-3 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.form-control {
+    border-radius: 0px;
+    padding: 25px 20px;
+    border: 0px;
+}
+
+::-moz-placeholder {
+    font-size: 16px;
+}
+
+/* Firefox 19+ */
+:-moz-placeholder {
+    font-size: 20px;
+
+}
+
+/* Firefox 18- */
+:-ms-input-placeholder {
+    font-size: 20px;
+
+}
+
+textarea {
+    padding: 10px 20px;
+    border: 0px;
+}
+
+header {
+
+    font-size: 50px;
+    text-align: center;
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px;
+}
+
+.experience header {
+    text-align: left;
+
+}
+
+.learn-with {
+    padding-top: 200px;
+    padding-left: 50px;
+}
+
+img.icons {
+    height: 80px;
+}
+
+.how-it-works {
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+
+.how-it-works h4 {
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+.how-it-works h3 {
+    font-size: 25px;
+}
+
+.master {
+    padding-top: 300px;
+    min-width: 70%;
+
+}
+
+h1.banner-topic {
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-bottom: 2px solid #fff;
+}
+
+img.choose {
+    object-fit: cover;
+}
+
+.get-access{
+    font-size: 50px;
+}
+.provide-section {
+
+    font-size: 50px;
+    text-align: center;
+    margin: 0px 0px 70px 0px;
+}
+
+header.provide {
+    color: rgb(245, 157, 50) !important;
+    position: absolute;
+    background: white;
+    padding: 50px 50px 150px 50px;
+    margin-right: 30px;
+    top: 10px;
+    left: -120px;
+}
+
+.captive-img {
+    height: 35rem;
+    width: 40rem;
+    object-fit: cover;
+}
+
+header.captivating {
+    color: white;
+
+    text-align: left;
+    font-size: 100px;
+    line-height: 120px;
+
+}
+
+.slider-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFFFFF;
+
+    display: block;
+    padding-bottom: 20px;
+}
+
+.join-us {
+    padding: 10px 50px;
+    font-size: 20px;
+}
+
+.login-bg {
+    background-image: url("{{ asset('images/signups.png')}} ");
+    background-repeat: no-repeat;
+
+}
+
+.sign-up-form.container {
+    max-width: 600px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .index {
+        background-image: url('../images/mobilebanner.png');
+        object-fit: cover;
+    }
+
+    h2.comfort {
+        font-size: 30px;
+    }
+
+    .join-us {
+        display: block;
+        margin-left: 20px !important;
+        min-width: 100%;
+    }
+
+    .index {
+        height: 350px;
+    }
+
+    .index hr {
+        display: none;
+        ;
+    }
+
+    .comfort {
+        font-size: 30px;
+    }
+
+    .master {
+        padding-top: 180px;
+        width: 100%;
+    }
+
+    .captive-img {
+        height: 15rem;
+        width: 40rem;
+        object-fit: cover;
+    }
+
+    .slider-text {
+        font-size: 22px;
+        border: none;
+        margin-bottom: 0px;
+    }
+
+    header.captivating {
+        position: absolute;
+        top: 70px;
+        left: 40px;
+        z-index: 1000;
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    h1.banner-topic {
+        font-size: 20px;
+        font-weight: bold;
+        color: #FFFFFF;
+        border-bottom: 2px solid #fff;
+    }
+
+    img.choose {
+        height: 200px;
+    }
+
+    header.provide {
+        font-size: 20px;
+        padding: 20px 20px 50px 20px;
+        margin-right: 0px;
+    }
+
+    footer a {
+        font-size: 10px;
+    }
+
+    footer h4 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .unlock-your-potential img {
+        position: relative;
+        top: -5rem;
+    }
+
+    .master a {
+        font-size: 20px;
+    }
+
+    img.icons {
+        height: 50px;
+    }
+
+    .unlock-your-potential {
+        margin-top: 10rem;
+    }
+
+    .how-it-works {
+        padding-bottom: 30px;
+    }
+
+    .how-it-works h3 {
+        font-size: 15px;
+    }
+
+    .login-wrapper .login-text h1,
+    .login-wrapper .login-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-wrapper .login-text a {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .login-wrapper .login-text p {
+        font-size: 12px;
+    }
+
+    .col-12 {
+        padding-right: 0px;
+    }
+
+    .row {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .login-form,
+    .sign-up-form {
+        min-width: 300px;
+        margin-bottom: 50px;
+        margin-top: 50px !important;
+    }
+
+    .login-wrapper .login .container {
+        margin: 0px;
+    }
+
+    .login-wrapper .col-md-6 {
+        min-height: 0px;
+    }
+
+    .login-wrapper .login-text {
+        padding-top: 50px;
+    }
+
+    .provide-section {
+        padding-top: 0px;
+        margin: 0px 0px 40px 0px;
+        font-size: 30px;
+
+    }
+
+    .provide-section a.join-us {
+        margin: 10px 0px;
+        max-width: 50%;
+    }
+
+
+    .get-access{
+        font-size: 30px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

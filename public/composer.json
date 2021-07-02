@@ -1,0 +1,15 @@
+{
+    "require": {
+        "pawlox/video-thumbnail": "^1.0",
+        "lakshmaji/thumbnail": "^1.4",
+        "pion/laravel-chunk-upload": "^1.3",
+        "pbmedia/laravel-ffmpeg": "^5.0",
+        "anhskohbo/no-captcha": "^3.2",
+        "buzz/laravel-google-captcha": "2.*"
+    },
+
+    "repositories": [{
+        "type": "vcs",
+        "url": "https://github.com/PHP-FFMpeg/BinaryDriver.git"
+    }]
+}

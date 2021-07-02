@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Acadazone" uploadOnCheckin="53e2909c-db9a-4ed0-93c8-5644ead78029">
+    <serverData>
+      <paths name="Acadazone">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="Acadazone" />
+  </component>
+</project>

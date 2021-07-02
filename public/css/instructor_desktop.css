@@ -1,0 +1,330 @@
+h2 {
+    padding: 20px 0px 0px 40px;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.side-bar {
+    background: #2b5557;
+    height: 200vh;
+}
+
+.side-bar .side-content {
+    padding-top: 130px;
+}
+
+.side-bar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 2rem;
+    margin: .5rem 0rem;
+}
+
+.text-white {
+    color: white;
+}
+
+.row {
+    margin: 0px;
+    padding: 0px;
+}
+
+.card,
+.card-body {
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.card h6 {
+    font-size: 16px;
+}
+
+.trending p {
+    font-size: 13px;
+}
+
+.card a {
+    color: black;
+}
+
+.card a:hover {
+    text-decoration: none;
+}
+
+video {
+    width: 100%;
+}
+
+.black-background {
+    background: grey;
+    color: white;
+}
+
+.set-height .side-videos {
+    height: 400px;
+    overflow: auto;
+}
+
+.side-videos {
+    font-size: 13px;
+}
+
+.side-videos a {
+    color: white;
+}
+
+.nav a {
+    color: black !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:hover,
+.nav-tabs .nav-link.active:focus {
+    background: none;
+    border: 0px;
+}
+
+.nav-tabs .nav-item {
+    width: 50%;
+}
+
+.nav.nav-tabs {
+    position: relative;
+}
+
+.nav-tabs li.active {
+    display: block;
+    border-bottom: 1px solid red;
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
+}
+
+.nav-tabs li.active:hover {
+    width: 50%;
+}
+
+.nav-tabs li.active-border {
+    border-bottom: 1px solid red;
+}
+
+.change-color {
+    color: blue !important;
+}
+
+.student-videos-wrapper h6 {
+    font-size: 13px;
+    font-weight: 600;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+.student-videos-wrapper p {
+    font-size: 14px;
+    color: grey;
+    margin: 0px;
+    margin-bottom: 0px;
+}
+
+.side-videos .col-md-7 {
+    padding: 0px;
+}
+
+.sidepanel,
+.mobile {
+    display: none;
+}
+
+.change-password {
+    min-width: 80%;
+}
+
+/*---------------------------------------- Phones ------------------------------------------*/
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (min-width: 620px) {
+    .navbar ul.explainer-video {
+        display: none;
+    }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 700px) {
+    .side-bar {
+        display: none;
+    }
+
+    .navabar {
+        display: none !important;
+    }
+
+    .search form.ml-5 {
+        margin-left: 1rem !important;
+
+        margin-right: 1rem !important;
+    }
+
+    .search button {
+        font-size: 10px;
+    }
+
+    .wrapper-searched-videos.ml-5 {
+        margin-left: 1rem !important;
+    }
+
+    .wrapper-searched-videos h4 {
+        font-size: 15px;
+    }
+
+    .wrapper-searched-videos .desc {
+        display: none;
+    }
+
+    .side-videos .col-md-7 {
+        padding: 1rem 0rem 2rem 3rem;
+    }
+
+    .navbar.desktop {
+        display: none;
+    }
+
+    .sidepanel {
+        background: #3f7779;
+        ;
+        color: white;
+        /* background: rgb(238, 141, 37);
+        background: linear-gradient(148deg, rgba(238, 141, 37, 1) 28%, rgba(245, 168, 81, 1) 39%, rgba(241, 170, 88, 1) 49%, rgba(238, 151, 39, 1) 59%, rgba(230, 160, 70, 1) 74%); */
+    }
+
+    /* The sidepanel menu */
+    .sidepanel {
+
+        height: 100vh;
+        /* Specify a height */
+        width: 0%;
+        /* transform: translateX(-500px); */
+        /* 0 width - change this with JavaScript */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Stay on top */
+        top: 0;
+        left: 0;
+        /* background-color: #111; */
+        /* Black*/
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        /* Place content 60px from the top */
+        transition: 0.5s ease-in-out;
+        /* 0.5 second transition effect to slide in the sidepanel */
+    }
+
+    .sidepanel,
+    .mobile {
+        display: block;
+    }
+
+    .side-menu {
+        border-top: 1px solid #ffffff;
+    }
+
+    .side-menu a {
+        color: #ffffff;
+
+        display: block;
+        font-size: 15px;
+        margin-bottom: 15px;
+        margin-left: 50px;
+    }
+
+    .side-menu i {
+        margin-right: 20px;
+    }
+
+    .menu-open {
+        /* transform: translateX(0px); */
+        width: 80%;
+    }
+
+    .student-videos-wrapper.mt-5 {
+        margin-top: 0px;
+    }
+
+    .video-header {
+        font-size: 20px;
+        padding-left: 1rem;
+    }
+
+    .video.pt-5 {
+        padding-top: 1rem !important;
+    }
+
+    .side-videos .col-md-7 {
+        padding-left: 1rem;
+    }
+
+    .login-wrapper h4 {
+        font-size: 18px;
+    }
+
+    .likes {
+        margin-bottom: 20px;
+    }
+
+    .trending h2 {
+        margin: 0px;
+        padding: 0px;
+        font-size: 18px;
+    }
+
+    .trending .card h6 {
+        padding: 0px !important;
+        margin: 0px !important;
+        font-size: 16px;
+    }
+
+    .profile-wrapper .container,
+    .profile-wrapper .col-12 {
+        padding: 0px !important;
+    }
+
+    .row.ml-5,
+    .student-videos-wrapper.mx-5 {
+        margin: 0px 10px 0px 10px !important;
+    }
+
+    .student-videos-wrapper h2 {
+        padding-left: 10px;
+        font-size: 20px;
+    }
+
+    .change-password {
+        min-width: 100%;
+    }
+
+    .main-content {
+        margin-top: 15px;
+    }
+
+    .login-wrapper {
+        margin-top: 50px;
+    }
+
+    .main-content .dash-box {
+        margin-bottom: 20px;
+    }
+}

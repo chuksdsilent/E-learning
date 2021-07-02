@@ -1,0 +1,166 @@
+body {
+    background-color: #f4f6f9;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+}
+
+i {
+    margin-right: 5px;
+}
+
+.card {
+    padding: 15px;
+}
+
+.navbar {
+    border-bottom: 1px solid #dee2e6;
+    background: white;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.no-padding-left {
+    padding-left: 0px;
+}
+
+.main-side-bar {
+    background: #343a40;
+    height: 150vh;
+    color: white;
+}
+
+.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+.bg-success {
+    background-color: #17b81f !important;
+}
+
+.bg-danger {
+    background-color: #d12626 !important;
+}
+
+.bg-warning {
+    background-color: #ced126 !important;
+    color: rgb(36, 36, 36) !important;
+}
+
+.bg-warning a {
+    color: rgb(36, 36, 36) !important;
+}
+
+.bg-show {
+    background-color: #b81770 !important;
+}
+
+.bg-d {
+    background-color: #9e53b1 !important;
+}
+
+.bg-t {
+    background-color: #1770b8 !important;
+}
+
+/*-------------------box area----------------------------*/
+.row {
+    margin: 0px;
+    padding: 0px;
+}
+
+.box-area .row {
+    margin-bottom: 15px;
+}
+
+.main-content .dash-box h2,
+.main-content .dash-box h6 {
+    font-weight: bold;
+}
+
+.main-content .dash-box {
+    background: yellow;
+    height: 150px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.main-content .dash-box a {
+    position: relative;
+    bottom: 0px;
+    display: block;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.main-content .box-area .dash-box .box-content {
+    display: block;
+    padding-bottom: 35px;
+}
+
+.main-side-bar a {
+    color: #fff;
+    padding-left: 30px;
+    padding: 10px 0px 10px 30px;
+}
+
+.main-side-bar .nav {
+    width: 100%;
+}
+
+.main-side-bar a:hover {
+    background: #17b81f;
+
+}
+
+.main-side-bar ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.main-side-bar li {
+    list-style-type: none;
+}
+
+.main-side-bar h4 {
+    padding: 30px 0px !important;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 30px;
+}
+
+.main-side-bar .active {
+    background: #17b81f;
+}
+
+/*------------------------------------Chart Ares----------------------------------*/
+.chart {
+    background: white;
+}
+
+.card h6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*------------------------------Drivers information --------------------------*/
+.show-driver .row {
+    padding: 10px 0px;
+}
+
+.show-driver label {
+    font-weight: bold;
+}

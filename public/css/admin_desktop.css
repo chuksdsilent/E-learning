@@ -1,0 +1,176 @@
+body {}
+
+.row {
+    margin: 0px;
+    padding: 0px;
+}
+
+.login-wrapper .change-password {
+    min-width: 80%;
+
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+#show-notice,
+#code-notice {
+    display: none;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.side-bar {
+    background: #2b5557;
+    height: 200vh;
+}
+
+.side-bar .side-content {
+    padding-top: 130px;
+}
+
+.side-bar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 2rem;
+    margin: .5rem 0rem;
+}
+
+.text-white {
+    color: white;
+}
+
+.card-header {
+    background: rgb(245, 157, 50) !important;
+    height: 40px;
+    ;
+    padding: 5px 0px;
+}
+
+.card-header button.header-btn-primary,
+.card-header button.header-btn-primary:focus,
+.card-header button.header-btn-primary:active,
+.card-header button.header-btn-primary:visited {
+    background: #2b5557;
+    color: #FFFFFF;
+    height: 30px;
+    padding: 0px 20px;
+}
+
+.card-header button.btn-primary:hover {
+    background: #44797c !important;
+    color: #FFFFFF;
+}
+
+button.header-btn {
+    border: 2px solid grey;
+    height: 40px;
+    ;
+}
+
+button.header-btn:hover {
+    background: #F9A030;
+    border: 2px solid rgb(245, 157, 50);
+}
+
+.side-bar a:hover {
+    background: rgb(245, 157, 50) !important;
+    display: block;
+    color: #333333;
+    padding: 0.5rem 2rem;
+    margin: 0.5em 0rem;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.wrapper .container {
+    width: 90%;
+    margin-top: 5rem;
+}
+
+label {
+    font-size: 15px;
+}
+
+.create-school .card {
+    border-radius: 0px;
+    height: 200px;
+    ;
+}
+
+.create-school .container {
+    width: 80%;
+    margin-top: 2rem;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.alert ul li {
+    list-style-type: disc;
+}
+
+.create-school h5 {
+    position: absolute;
+    bottom: 0px;
+    padding: 10px 20px;
+    border-top: 5px solid #2b5557;
+    width: 100%;
+    font-weight: bolder;
+
+}
+
+.create-school img {
+    height: 146px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.create-school h1 {
+    padding: 1.5rem 2rem;
+    color: #6d6969;
+}
+
+.create-school a {
+    display: block;
+    color: #333333;
+    text-decoration: none;
+}
+
+.wrapper a {
+    color: black;
+}
+
+.wrapper a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.wrapper table i {
+    color: white;
+}
+
+.card {
+    border-radius: 0px;
+}
+
+.login-wrapper .change-password {
+    min-width: 100%;
+    ;
+}
