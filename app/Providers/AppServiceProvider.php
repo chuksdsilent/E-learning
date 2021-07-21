@@ -37,5 +37,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('universities', Universities::orderBy('name', 'ASC')->get());
         });
 
+        
+        if($this->app->environment('production')) {
+            \URL::forceScheme('https');
+        }
+
     }
 }
