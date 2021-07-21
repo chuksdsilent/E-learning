@@ -58,7 +58,7 @@ var getDepartments = (fac, dept, options, uni) => {
         dept.append("<option id='loading'>Loading...</option>");
         axios({
             method: 'get',
-            url: 'departments/?fac_id='+ fac,
+            url: 'departments?fac_id='+ fac,
             responseType: 'application/json',
         })
             .then(function(response) {
