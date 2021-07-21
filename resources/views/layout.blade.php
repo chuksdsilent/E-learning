@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Acadazone</title>
+    <title>E-Learning</title>
 
     <link rel="stylesheet" href="{{asset('libraries/bootstrap/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/settings.css')}}">
@@ -28,7 +28,7 @@
     <div class="nav-wrapper">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="{{url('/')}}">ACADAZONE</a>
+                <a class="navbar-brand" href="{{url('/')}}">E-Learning</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
