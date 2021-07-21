@@ -42,5 +42,7 @@ class AppServiceProvider extends ServiceProvider
             \URL::forceScheme('https');
         }
 
+        header("Access-Control-Allow-Origin: *");
+
     }
 }
