@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Felken</title>
+    <title>E-Learning</title>
     <link rel="stylesheet" href="{{asset('libraries/bootstrap/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/settings.css')}}">
     <link rel="stylesheet" href="{{asset('libraries/animate/animate.min.css')}}">
@@ -26,7 +26,7 @@
     <div class="login-wrapper">
         <div class="navbar navbar-expand-lg navbar-light">
             <nav class="container">
-                <a class="navbar-brand" href="#">Felken</a>
+                <a class="navbar-brand" href="#">E-Learning</a>
             </nav>
         </div>
         <div class="container sign-up-form">
