@@ -395,7 +395,7 @@ class VideoController extends Controller
     {
         $options = $request->get('options');
         $videoComment = VideoComments::where('vid_id', $id)->get();
-        return view('instructor.vid', ['vid_id' => $id])->with('options', $options)->with('videoComment', $videoComment);
+        return view('instructor.vids', ['vid_id' => $id])->with('options', $options)->with('videoComment', $videoComment);
     }
 
     public function publishVideo(Request $request)

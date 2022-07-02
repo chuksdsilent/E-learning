@@ -28,9 +28,14 @@ class InstructorsController extends Controller
 
         $depts = Departments::all();
         $courses = Courses::all();
+        $faculties = Faculties::all();
         $otherInstitutions = OtherInstitutions::all();
         $subjects = Subjects::all();
-        return view('instructor.video.create', ['otherInstitutions' => $otherInstitutions])->with('courses', $courses)->with('depts', $depts)->with('subjects', $subjects);
+        return view('instructor.video.create', ['otherInstitutions' => $otherInstitutions])
+            ->with('courses', $courses)
+            ->with('faculties', $faculties)
+            ->with('depts', $depts)
+            ->with('subjects', $subjects);
     }
     public function index()
     {

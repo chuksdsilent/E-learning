@@ -202,6 +202,7 @@ Route::get("admin/login", "LoginController@checkAdminCredentials");
 
 Route::group(['prefix' => 'admin', 'middleware' => ['AdminRole'], 'as' => 'admin.'], function () {
     Route::get("dashboard", "AdminController@dashboard")->name('dashboard');
+    Route::get("get-video", "AdminController@getVideo")->name("get-video");
     Route::get("create-school", "AdminController@createSchool")->name('create-school');
     Route::get("payments", "AdminController@payments")->name('payments');
     Route::get("change-password", "AdminController@showPassword")->name('change-password');

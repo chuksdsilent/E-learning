@@ -24,6 +24,7 @@ use App\VideoViewsLikes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Response;
 use \Illuminate\Support\Str;
 
 class AdminController extends Controller
@@ -296,6 +297,13 @@ class AdminController extends Controller
 
     public function showPassword(){
         return view('change_password');
+    }
+
+    public function getVideo(){
+        $video = storage_path(\App\Videos::where('vid_id', request()->get("vid_id"))->value('vid_path'));
+        $response = Response::make($video, 200);
+        $response->header('Content-Type', 'video/mp4');
+        return $response;
     }
     public function videos(){
         $videos =  Videos::orderBy('created_at', 'DESC')->where('status', 'U')->get();

@@ -285,7 +285,7 @@ class StudentsController extends Controller
 
         if (Auth::user()->institution == "uni") {
             $level = Students::where('email', Auth::user()->email)->value('level');
-            $faculty = Students::where('email', Auth::user()->email)->value('faculty');
+            // $faculty = Students::where('email', Auth::user()->email)->value('faculty');
             $department = Students::where('email', Auth::user()->email)->value('department');
             $university = Students::where('email', Auth::user()->email)->value('university');
             $level = Students::where('email', Auth::user()->email)->value('level');

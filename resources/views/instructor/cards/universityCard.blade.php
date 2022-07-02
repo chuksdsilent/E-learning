@@ -9,20 +9,23 @@
 
         <input type="hidden" name="general" id="departmental" value="departmental">
     </div>
-    <div class="form-group">
-        <label for="">University</label>
-        <select name="uni_id" id="uni" class="form-control" >
-            <option value="">Select Univeristy</option>
-            @foreach ($universities as $university)
-                <option value="{{$university->uni_id}}">{{$university->name}}</option>
-            @endforeach
-        </select>
-        <small class="text-danger" id="uni-error"></small>
-    </div>
+{{--    <div class="form-group">--}}
+{{--        <label for="">University</label>--}}
+{{--        <select name="uni_id" id="uni" class="form-control" >--}}
+{{--            <option value="">Select Univeristy</option>--}}
+{{--            @foreach ($universities as $university)--}}
+{{--                <option value="{{$university->uni_id}}">{{$university->name}}</option>--}}
+{{--            @endforeach--}}
+{{--        </select>--}}
+{{--        <small class="text-danger" id="uni-error"></small>--}}
+{{--    </div>--}}
     <div class="form-group">
         <label for="">Faculty</label>
         <select name="fac_id" id="fac_id" class="form-control">
             <option value="">Select Faculty</option>
+            @foreach ($faculties as $faculty)
+                <option value="{{$faculty->fac_id}}">{{$faculty->name}}</option>
+            @endforeach
         </select>
         <small class="text-danger" id="fac-error"></small>
     </div>

@@ -95,10 +95,10 @@
                                 </div>
                             </form>
                         </div>
-                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete{{$subject->sub_id)}}">
+                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete{{$subject->sub_id}}">
                             <i class="fa fa-trash"></i>
                         </a>
-                        <div class="modal fade" id="delete{{$subject->sub_id)}}" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="delete{{$subject->sub_id}}" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <form action="{{url('admin/subjects/delete/'. $subject->sub_id)}}" method="POST">
                                 @csrf

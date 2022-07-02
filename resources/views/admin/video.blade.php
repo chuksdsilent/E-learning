@@ -7,9 +7,10 @@
                 <input type="hidden" name="options" id="options" value="{{$options}}">
 
                     <div class="col-md-8 col-12 col-sm-12 col-xs-12 col-lg-8">
+                      
                         <video controls class="w-100">
                             <source
-                                src="{{asset('myapp/storage/'. \App\Videos::where('vid_id', $vid_id)->value('vid_path'))}}"
+                                src="{{storage_path(\App\Videos::where('vid_id', $vid_id)->value('vid_path'))}}"
                                 type="video/mp4">
                             <source src="movie.ogg" type="video/ogg">
                             Your browser does not support the video tag.
@@ -18,6 +19,7 @@
                     <input type="hidden" name="vid_id" id="vid_id" value="{{$vid_id}}">
                     <div class="col-md-4 col-12 col-sm-12 col-xs-12 col-lg-4">
                         <h5 class="mt-5">Title</h4>
+                            
                             <h6>{{ \App\Videos::where('vid_id', $vid_id)->value('title')}}</h6>
                             <h5 class="mt-4">Overview</h5>
                             <h6 class="mb-5">{{ \App\Videos::where('vid_id', $vid_id)->value('description')}}</h6>

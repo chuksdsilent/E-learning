@@ -1,5 +1,3 @@
-
-
 $("#uni-submit").html("<span>Submit</span>");
 
 document.getElementById('uni-submit').onclick = function () {
@@ -34,7 +32,6 @@ document.getElementById('uni-submit').onclick = function () {
     var description = desc.val();
     var gencourses = gencourse.val();
     var allcourse = allcourses.val();
-
 
 
     // Errors
@@ -123,113 +120,111 @@ document.getElementById('uni-submit').onclick = function () {
                 //         photoError.text("Height must be less than the width and width should be greateer than 300px");
                 //     } else {
 
-                // Check if select and input is empey
-                if (uni_id === "") {
-                    $("#uni-error").text("Select University");
+                // Check if select and input is empty
+
+                if (fac_id === "") {
+                    facError.text("Select Faculty");
                     activateSubmit();
-
                 } else {
-                    if (fac_id === "") {
-                        facError.text("Select Faculty");
-                        activateSubmit();
-                    } else {
 
-                        if (title === "") {
-                            $("#title-error").text("Enter Title");
+                    if (title === "") {
+                        $("#title-error").text("Enter Title");
+                        activateSubmit();
+
+                    } else {
+                        if (description === "") {
+                            $("#desc-error").text("Enter Description");
                             activateSubmit();
 
                         } else {
-                            if (description === "") {
-                                $("#desc-error").text("Enter Description");
+                            if (level_id === "") {
+                                levelError.text("Select Level");
                                 activateSubmit();
 
                             } else {
-                                if (level_id === "") {
-                                    levelError.text("Select Level");
-                                    activateSubmit();
 
+                                if (semesters_id === "") {
+                                    semesterError.text("Select Semester");
+                                    activateSubmit();
                                 } else {
 
-                                    if (semesters_id === "") {
-                                        semesterError.text("Select Semester");
-                                        activateSubmit();
-                                    } else {
+                                    var config = {
+                                        onUploadProgress: function (progressEvent) {
+                                            var percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                                            document.getElementById('percent').innerHTML = percentCompleted + "%";
+                                        },
 
-                                        var config = {
-                                            onUploadProgress: function (progressEvent) {
-                                                var percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-                                                document.getElementById('percent').innerHTML = percentCompleted + "%";
-                                            },
+                                        "x-csrf-token": $("[name=_token]").val(),
+                                        'content-type': 'multipart/form-data'
+                                    };
+                                    // Upload video and record on the database
+                                    let data = new FormData();
+                                    data.append('videoFile', videoFile, videoFile.name);
+                                    data.append('institution_id', "No Institution");
+                                    data.append('level', level_id);
+                                    data.append('course_id', course_id);
+                                    data.append('semester', semesters_id);
+                                    data.append('title', title);
+                                    data.append('description', description);
+                                    data.append('status', "O");
+                                    data.append('fac_id', fac_id);
+                                    data.append('dept_id', dept_id);
+                                    data.append('subject_id', "No Subject");
+                                    data.append('class', "No Class");
+                                    data.append('subject_id', "No Subject");
+                                    data.append('status', "U");
+                                    data.append('gencourse', gencourses);
+                                    data.append("allcourses", allcourse);
+                                    axios.post('/store-video', data, config)
+                                        .then(response => {
+                                            console.log(response);
+                                            Swal.fire({
+                                                title: 'Video Uploaded',
+                                                text: '',
+                                                icon: 'success',
+                                                confirmButtonText: 'continue',
+                                                allowOutsideClick: false
+                                            });
 
-                                            "x-csrf-token": $("[name=_token]").val(),
-                                            'content-type': 'multipart/form-data'
-                                        };
-                                        // Upload video and record on the database
-                                        let data = new FormData();
-                                        data.append('videoFile', videoFile, videoFile.name);
-                                        data.append('institution_id', "No Institution");
-                                        data.append('level', level_id);
-                                        data.append('course_id', course_id);
-                                        data.append('semester', semesters_id);
-                                        data.append('title', title);
-                                        data.append('description', description);
-                                        data.append('status', "O");
-                                        data.append('uni_id', uni_id);
-                                        data.append('fac_id', fac_id);
-                                        data.append('dept_id', dept_id);
-                                        data.append('subject_id', "No Subject");
-                                        data.append('class', "No Class");
-                                        data.append('subject_id', "No Subject");
-                                        data.append('status', "U");
-                                        data.append('gencourse', gencourses);
-                                        data.append("allcourses", allcourse);
-                                        axios.post('/store-video', data, config)
-                                            .then(response => {
-                                                console.log(response);
-                                                Swal.fire({
-                                                    title: 'Video Uploaded',
-                                                    text: '',
-                                                    icon: 'success',
-                                                    confirmButtonText: 'continue',
-                                                    allowOutsideClick: false
-                                                });
-
-                                                Swal.fire({
-                                                    title: 'Video Uploaded',
-                                                    text: '',
-                                                    icon: 'success',
-                                                    confirmButtonText: 'continue',
-                                                    allowOutsideClick: false
-                                                });
+                                            Swal.fire({
+                                                title: 'Video Uploaded',
+                                                text: '',
+                                                icon: 'success',
+                                                confirmButtonText: 'continue',
+                                                allowOutsideClick: false
+                                            });
 
 
-                                                gencourse.find('option')
-                                                    .remove()
-                                                    .end();
+                                            gencourse.find('option')
+                                                .remove()
+                                                .end();
 
-                                                allcourses.find('option')
-                                                    .remove()
-                                                    .end();
+                                            allcourses.find('option')
+                                                .remove()
+                                                .end();
 
 
-                                                console.log(response.data.vid_id)
-                                                document.getElementById("span_vid_id").innerText =response.data.vid_id;
-                                                document.getElementById("link").style.display = "block";
-                                                window.scrollTo(0, 0);
-                                                activateSubmit();
-                                                clearInput(fac, dept, course, titles, desc, videoFile)
-                                            }).catch(response => {
-                                            console.log(response)
-                                        }).finally(()=>{
-                                            activateSubmitBtn()
+                                            console.log(response.data.vid_id)
+                                            document.getElementById("span_vid_id").innerText = response.data.vid_id;
+                                            document.getElementById("link").style.display = "block";
+                                            window.scrollTo(0, 0);
+                                            activateSubmit();
+                                            clearInput(fac, dept, course, titles, desc, videoFile)
+                                        }).catch(response => {
+                                        console.log(response)
+                                        if (error.response.data.errors.first_name) {
+                                            first_name_error.text(error.response.data.errors.first_name[0]);
+                                        }
+                                    }).finally(() => {
+                                        activateSubmitBtn()
 
-                                        });
-                                    }
+                                    });
                                 }
                             }
                         }
                     }
                 }
+
             }
         }
     }
@@ -238,6 +233,7 @@ document.getElementById('uni-submit').onclick = function () {
     // }
     // }
 };
+
 function activateSubmit() {
     console.log("show submit");
     $("#uni-submit").html("<span>Submit</span>");
