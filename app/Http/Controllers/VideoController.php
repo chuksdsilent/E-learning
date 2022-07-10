@@ -223,7 +223,7 @@ class VideoController extends Controller
 
 
             $coverPhotoFinalPath = storage_path('/videos/');
-            $finalPath = storage_path('/videos/');
+            $finalPath = public_path(). '/videos';
 
             $coverPhotoDBPath = 'videos/';
             $file_db_path = 'videos/';
@@ -477,7 +477,6 @@ class VideoController extends Controller
         return $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'uni_id' => 'required',
             'fac_id' => 'required'
             //            'video' => 'required|max:500000|mimes:mp4,mov,ogg'
         ], []);

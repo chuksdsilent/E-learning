@@ -3,6 +3,7 @@
 @section('content')
 <div class="col-md-9 mt-5">
     <div class="container">
+
         <style>
             #link{
                 display: none;
@@ -86,7 +87,6 @@
     }
 </style>
 <script>
-    console.log($("#token").val());
     $("#choose-institution").change(function (e) {
         console.log($("#choose-institution").val());
         $(".loader").css("display", "block");
