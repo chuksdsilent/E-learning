@@ -1,6 +1,5 @@
-@extends('student.partials.layout')
-@section('title', 'Videos')
-@section('content')
+<?php $__env->startSection('title', 'Videos'); ?>
+<?php $__env->startSection('content'); ?>
 <style>
     img {
         height: 70px;
@@ -23,17 +22,17 @@
 </style>
 <div class="col-md-12 no-padding no-margin">
     <div class="black-background set-height">
-        <input type="hidden" name="text" id="options" value="{{$options}}">
+        <input type="hidden" name="text" id="options" value="<?php echo e($options); ?>">
 
-        <input type="hidden" name="vid_id" id="vid-id" value="{{$vid_id}}">
-        <input type="hidden" name="user_email" id="user-email" value="{{Auth::user()->email}}">
-        <h2 class="video-header">{{ \App\Videos::where('vid_id', $vid_id)->value('title')}}</h2>
+        <input type="hidden" name="vid_id" id="vid-id" value="<?php echo e($vid_id); ?>">
+        <input type="hidden" name="user_email" id="user-email" value="<?php echo e(Auth::user()->email); ?>">
+        <h2 class="video-header"><?php echo e(\App\Videos::where('vid_id', $vid_id)->value('title')); ?></h2>
         <div class="row video pb-3 pt-5">
             <div class="col-md-12 ">
 
                 <video controls id="video" autoplay controlsList="nodownload">
 
-                    <source src="{{asset(\App\Videos::where('vid_id', $vid_id)->value('vid_path'))}}"
+                    <source src="<?php echo e(asset(\App\Videos::where('vid_id', $vid_id)->value('vid_path'))); ?>"
                         type="video/mp4">
                     <source src="movie.ogg" type="video/ogg">
 
@@ -73,14 +72,17 @@
                     <div class=" no-padding pt-4" style="margin-right: 15px;">
                         <a href="javascript:;" id="thumbs-up" class="text-white"><i class="fa fa-thumbs-up"></i>
                             <span id="show-thumbs-up">
-                                @if($options == "sec")
-                                {{thousandsCurrencyFormat(\App\SecVideoViewsLikes::where('vid_id',$vid_id)->where('thumbs_up', 1)->count())}}
-                                @elseif($options == "uni")
-                                {{thousandsCurrencyFormat(\App\VideoViewsLikes::where('vid_id',$vid_id)->where('thumbs_up', 1)->count())}}
-                                @elseif($options = "others")
-                                {{thousandsCurrencyFormat(\App\OtherInstitutionViewsLikes::where('vid_id',$vid_id)->where('thumbs_up', 1)->count())}}
+                                <?php if($options == "sec"): ?>
+                                <?php echo e(thousandsCurrencyFormat(\App\SecVideoViewsLikes::where('vid_id',$vid_id)->where('thumbs_up', 1)->count())); ?>
 
-                                @endif
+                                <?php elseif($options == "uni"): ?>
+                                <?php echo e(thousandsCurrencyFormat(\App\VideoViewsLikes::where('vid_id',$vid_id)->where('thumbs_up', 1)->count())); ?>
+
+                                <?php elseif($options = "others"): ?>
+                                <?php echo e(thousandsCurrencyFormat(\App\OtherInstitutionViewsLikes::where('vid_id',$vid_id)->where('thumbs_up', 1)->count())); ?>
+
+
+                                <?php endif; ?>
                             </span>
                         </a>
                     </div>
@@ -89,13 +91,16 @@
                             <i class="fa fa-thumbs-down"></i>
                         </a>
                         <span id="show-thumbs-down">
-                            @if($options == "sec")
-                            {{thousandsCurrencyFormat(\App\SecVideoViewsLikes::where('vid_id',$vid_id)->where('thumbs_down', 1)->count())}}
-                            @elseif($options == "uni")
-                            {{thousandsCurrencyFormat(\App\VideoViewsLikes::where('vid_id',$vid_id)->where('thumbs_down', 1)->count())}}
-                            @elseif($options = "others")
-                            {{thousandsCurrencyFormat(\App\OtherInstitutionViewsLikes::where('vid_id',$vid_id)->where('thumbs_down', 1)->count())}}
-                            @endif
+                            <?php if($options == "sec"): ?>
+                            <?php echo e(thousandsCurrencyFormat(\App\SecVideoViewsLikes::where('vid_id',$vid_id)->where('thumbs_down', 1)->count())); ?>
+
+                            <?php elseif($options == "uni"): ?>
+                            <?php echo e(thousandsCurrencyFormat(\App\VideoViewsLikes::where('vid_id',$vid_id)->where('thumbs_down', 1)->count())); ?>
+
+                            <?php elseif($options = "others"): ?>
+                            <?php echo e(thousandsCurrencyFormat(\App\OtherInstitutionViewsLikes::where('vid_id',$vid_id)->where('thumbs_down', 1)->count())); ?>
+
+                            <?php endif; ?>
 
                         </span>
                     </div>
@@ -112,7 +117,7 @@
 
             <div class="row">
                 <div class="mr-4" style="max-width: 700px; !important">
-                    <img src="{{asset(\App\Instructors::where('email', $otherIns)->value('profile_pics') )}}"
+                    <img src="<?php echo e(asset(\App\Instructors::where('email', $otherIns)->value('profile_pics') )); ?>"
                         class="img-fluid mt-5" style="border-radius:50%; object-fit:cover; width: 100px; height: 100px;"
                         alt="">
                 </div>
@@ -120,19 +125,19 @@
                     <div class="row">
                         <div class="mr-2 pt-3 no-padding no-margin">
                             <h4 class="mt-5 no-margin">
-                                {{\App\Instructors::where('email', $otherIns)->value('username') }}
+                                <?php echo e(\App\Instructors::where('email', $otherIns)->value('username')); ?>
+
                             </h4>
                         </div>
-                        {{-- <div class="col-md-2 pt-3 no-padding no-margin">
-                                            <button id="subscribe" class="btn btn-primary mt-5">Subscribe</button>
-                                        </div> --}}
+                        
                     </div>
 
                 </div>
             </div>
             <h5 class="mt-4 pl-4 ">Overview</h5>
             <p class="pl-4">
-                {{\App\Videos::where('vid_id', $vid_id)->value('description')}}
+                <?php echo e(\App\Videos::where('vid_id', $vid_id)->value('description')); ?>
+
             </p>
             <h5 class="pl-4"> <span id="count_comments"></span> Comments</h5>
             <div class="form-group pl-4""><input type=" text" name="" placeholder="Your Comment here..." id="comment"
@@ -148,12 +153,12 @@
 </div>
 
 </div>
-<input type="hidden" id="vid_id" value="{{$vid_id}}">
-<script src="{{asset('libraries/jquery-3.4.1.min.js')}}"></script>
-<script src="{{asset('libraries/axios/axios.js')}}"></script>
-<script src="{{asset('libraries/toastify/toastify.js')}}"></script>
-<script src="{{asset('libraries/axios/globalValues.js')}}"></script>
-<script src="{{asset('js/video_views_likes.js')}}"></script>
+<input type="hidden" id="vid_id" value="<?php echo e($vid_id); ?>">
+<script src="<?php echo e(asset('libraries/jquery-3.4.1.min.js')); ?>"></script>
+<script src="<?php echo e(asset('libraries/axios/axios.js')); ?>"></script>
+<script src="<?php echo e(asset('libraries/toastify/toastify.js')); ?>"></script>
+<script src="<?php echo e(asset('libraries/axios/globalValues.js')); ?>"></script>
+<script src="<?php echo e(asset('js/video_views_likes.js')); ?>"></script>
 <script>
     video.onplaying = function () {
 
@@ -303,4 +308,6 @@
 
     getComment(comment_data, content_comment, comment, count_comments);
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('student.partials.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\felken\resources\views/student/video.blade.php ENDPATH**/ ?>

@@ -1,33 +1,34 @@
-@extends('admin.partials.layout')
-@section('title', 'Videos')
-@section('content')
+<?php $__env->startSection('title', 'Videos'); ?>
+<?php $__env->startSection('content'); ?>
     <div class="col-md-12 no-padding no-margin">
         <div class="black-background set-height">
             <div class="row py-5">
-                <input type="hidden" name="options" id="options" value="{{$options}}">
+                <input type="hidden" name="options" id="options" value="<?php echo e($options); ?>">
 
                     <div class="col-md-8 col-12 col-sm-12 col-xs-12 col-lg-8">
+                        <?php echo e(\App\Videos::where('vid_id', $vid_id)->value('vid_path')); ?>
+
                         <video controls class="w-100">
                             <source
-                                src="{{asset(\App\Videos::where('vid_id', $vid_id)->value('vid_path'))}}"
+                                src="<?php echo e(asset(\App\Videos::where('vid_id', $vid_id)->value('vid_path'))); ?>"
                                 type="video/mp4">
                             <source src="movie.ogg" type="video/ogg">
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <input type="hidden" name="vid_id" id="vid_id" value="{{$vid_id}}">
+                    <input type="hidden" name="vid_id" id="vid_id" value="<?php echo e($vid_id); ?>">
                     <div class="col-md-4 col-12 col-sm-12 col-xs-12 col-lg-4">
                         <h5 class="mt-5">Title</h4>
 
-                            <h6>{{ \App\Videos::where('vid_id', $vid_id)->value('title')}}</h6>
+                            <h6><?php echo e(\App\Videos::where('vid_id', $vid_id)->value('title')); ?></h6>
                             <h5 class="mt-4">Overview</h5>
-                            <h6 class="mb-5">{{ \App\Videos::where('vid_id', $vid_id)->value('description')}}</h6>
+                            <h6 class="mb-5"><?php echo e(\App\Videos::where('vid_id', $vid_id)->value('description')); ?></h6>
                             <span class="mr-4">Views:
-                        {{\App\SecVideoViewsLikes::where('views', 1)->where('vid_id', $vid_id)->count()}}</span>
+                        <?php echo e(\App\SecVideoViewsLikes::where('views', 1)->where('vid_id', $vid_id)->count()); ?></span>
                             <span class="mr-4">Likes:
-                        {{\App\SecVideoViewsLikes::where('thumbs_up', 1)->where('vid_id', $vid_id)->count()}}</span>
+                        <?php echo e(\App\SecVideoViewsLikes::where('thumbs_up', 1)->where('vid_id', $vid_id)->count()); ?></span>
                             <span class="mr-4">Dislikes:
-                        {{\App\SecVideoViewsLikes::where('thumbs_down', 1)->where('vid_id', $vid_id)->count()}}</span>
+                        <?php echo e(\App\SecVideoViewsLikes::where('thumbs_down', 1)->where('vid_id', $vid_id)->count()); ?></span>
                             <div class="d-flex">
                                 <h5 class="mt-4 mr-4">
                                     Publish
@@ -35,8 +36,8 @@
                                 <h5 class="mt-3">
                                     <label class="switch">
                                         <input type="checkbox" id="publish" class="block-instructors"
-                                               value="{{ \App\Videos::where('vid_id', $vid_id)->value('publish') }}"
-                                            {{ (\App\Videos::where('vid_id', $vid_id)->value('publish') )== "1" ? "checked" : "unchecked" }}>
+                                               value="<?php echo e(\App\Videos::where('vid_id', $vid_id)->value('publish')); ?>"
+                                            <?php echo e((\App\Videos::where('vid_id', $vid_id)->value('publish') )== "1" ? "checked" : "unchecked"); ?>>
                                         <span class="slider round"></span>
                                     </label>
                                 </h5>
@@ -47,9 +48,9 @@
             </div>
         </div>
     </div>
-    <script src="{{asset('libraries/jquery-3.4.1.min.js')}}"></script>
-    <script src="{{asset('libraries/axios/axios.js')}}"></script>
-    <script src="{{asset('libraries/axios/globalValues.js')}}"></script>
+    <script src="<?php echo e(asset('libraries/jquery-3.4.1.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('libraries/axios/axios.js')); ?>"></script>
+    <script src="<?php echo e(asset('libraries/axios/globalValues.js')); ?>"></script>
     <script>
         $("#publish").click(function () {
 
@@ -75,4 +76,6 @@
         })
 
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.partials.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\felken\resources\views/admin/video.blade.php ENDPATH**/ ?>

@@ -284,27 +284,29 @@ class StudentsController extends Controller
     {
 
         if (Auth::user()->institution == "uni") {
-            $level = Students::where('email', Auth::user()->email)->value('level');
+           $level = Students::where('email', Auth::user()->email)->value('level');
             // $faculty = Students::where('email', Auth::user()->email)->value('faculty');
-            $department = Students::where('email', Auth::user()->email)->value('department');
+           $department = Students::where('email', Auth::user()->email)->value('department');
             $university = Students::where('email', Auth::user()->email)->value('university');
             $level = Students::where('email', Auth::user()->email)->value('level');
 
-            $rec_videos =  Courses::where("courses.dept_id", $department)
-                ->where('courses.level', $level)
-                ->where('videos.publish', 1)
-                ->orderBy('videos.created_at', 'DESC')
-                ->join('videos', 'courses.course_code', '=', 'videos.course_code')->get();
+            $rec_videos = Videos::where("dept_id", $department)->where("level", $level)->where("publish", 1)->orderBy("created_at", "DESC")->get();
+//            $rec_videos =  Courses::where("courses.dept_id", $department)
+//                ->where('courses.level', $level)
+//                ->where('videos.publish', 1)
+//                ->orderBy('videos.created_at', 'DESC')
+//                ->join('videos', 'courses.course_code', '=', 'videos.course_code')->get();
 
-            if (count($rec_videos) == 0) {
-
-                $rec_videos =  Courses::where("courses.dept_id", $department)
-                    ->inRandomOrder()
-                    ->where('courses.level', $level)
-                    ->where('videos.publish', 1)
-                    ->orderBy('videos.created_at', 'DESC')
-                    ->join('videos', 'courses.course_code', '=', 'videos.course_code')->get();
-            }
+//            Video::where()->get()
+//            if (count($rec_videos) == 0) {
+//
+//                $rec_videos =  Courses::where("courses.dept_id", $department)
+//                    ->inRandomOrder()
+//                    ->where('courses.level', $level)
+//                    ->where('videos.publish', 1)
+//                    ->orderBy('videos.created_at', 'DESC')
+//                    ->join('videos', 'courses.course_code', '=', 'videos.course_code')->get();
+//            }
         } elseif (Auth::user()->institution == "sec") {
             $class = SecStudents::where('email', Auth::user()->email)->value('student_class');
             $rec_videos = Videos::where('class', $class)->orderBy('created_at', 'DESC')->where('publish', 1)->get();
@@ -319,6 +321,7 @@ class StudentsController extends Controller
                 $rec_videos = Videos::where('institution_id', $inst_id)->inRandomOrder()->orderBy('created_at', 'DESC')->where('publish', 1)->get();
             }
         }
+//        dd($rec_videos);
         return view('student.videos')->with('rec_videos', $rec_videos);
     }
 

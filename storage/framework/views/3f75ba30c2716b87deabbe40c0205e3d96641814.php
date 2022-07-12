@@ -2,7 +2,6 @@
 <?php $__env->startSection('content'); ?>
 <div class="col-md-9 mt-5">
     <div class="container">
-        <?php echo e(public_path()); ?>
 
         <style>
             #link{
