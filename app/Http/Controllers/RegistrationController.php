@@ -214,13 +214,13 @@ class RegistrationController extends Controller
             $role = session()->get("role");
             $dateTime = Carbon::now();
             User::where('email', $request->session()->get('email'))->update(['email_verified_at' => Carbon::parse($dateTime)->format('Y-m-d H:i:s')]);
-            // return view('signupupdate')
-            //     ->with('role', $role)
-            //     ->with('institutions', $institutions)
-            //     ->with('faculties', $faculties)
-            //     ->with('states', $states)
-            //     ->with('universities', $universities);
-           return redirect('email/verify');
+             return view('signupupdate')
+                 ->with('role', $role)
+                 ->with('institutions', $institutions)
+                 ->with('faculties', $faculties)
+                 ->with('states', $states)
+                 ->with('universities', $universities);
+//           return redirect('email/verify');
         }
     }
     public function signup(StudentSignupRequest $request){

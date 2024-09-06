@@ -1,0 +1,50 @@
+---
+services:
+  e_learn_mysql_db:
+    image: mysql:8.3
+    container_name: regina_db_mysql
+    restart: unless-stopped
+    ports:
+      - 3344:3306
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_MASTER_PASSWORD}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - CONTAINER_ROLE=app
+    volumes:
+      - db-data:/var/lib/mysql
+      - ~/php.ini:/usr/local/etc/php/php.ini
+  app:
+#    build:
+#      context: .
+#      target: php
+#      args:
+#        - APP_ENV="${APP_ENV}"
+    image: oshabz/e-learn:2.0
+    container_name: regina_laravel_app
+    environment:
+      - APP_ENV="${APP_ENV}"
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_USERNAME=${DB_USERNAME}
+      - CONTAINER_ROLE=app
+    working_dir: /app
+    ports:
+      - 8020:8000
+    depends_on:
+      - e_learn_mysql_db
+
+  phpmyadmin:
+      image: phpmyadmin
+      restart: always
+      ports:
+          - 9100:80
+      environment:
+          - PMA_ARBITRARY=1
+          - UPLOAD_LIMIT= 100000000
+      depends_on:
+          - e_learn_mysql_db
+volumes:
+  db-data: null
+
