@@ -17,12 +17,10 @@ services:
       - ~/php.ini:/usr/local/etc/php/php.ini
 
   app:
-#    build:
-#      context: .
-#      target: php
-#      args:
-#        - APP_ENV="${APP_ENV}"
-    image: oshabz/e-learn:2.0
+    build:
+      context: .
+      args:
+        - APP_ENV="${APP_ENV}"
     container_name: e_learn_app
     environment:
       - APP_ENV="${APP_ENV}"
